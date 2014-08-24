@@ -1,14 +1,14 @@
 ---
 layout: post
-title: TedYin
+title: Luz
 ---
 
 <center>
-尹珅杰
+周露
 ===
 
 Android Lover
 ---
 </center>
 
->Mail： tedworld.time@gmail.com
+>Mail： loody128@gmail.com

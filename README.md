@@ -1,6 +1,6 @@
 
 <center>
-TedYin ' s Personal Website
+Luz ' s Personal Website
 ===
-[About Me](http://tedyin.me/about)
+[About Me](http://luz.me/about)
 </center>

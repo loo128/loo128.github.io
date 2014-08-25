@@ -1,13 +1,11 @@
-title:            Luz
-url:              http://luz.me
-permalink:        pretty
-pygments:         true
-markdown:         rdiscount
-rdiscount:
-  extensions:     [smart]
-google_analytics: UA-21332781-7
-timezone:         China
-paginate: 5
-links: 
-  - name:         About
-    url:          /about
+auto: true
+
+markdown: rdiscount
+pygments: true
+paginate: 8
+permalink: /:title
+
+title: BeiYuu.com
+url: http://beiyuu.com
+feed: /atom.xml
+author_info: <a href="http://beiyuu.com/">BeiYuu</a>

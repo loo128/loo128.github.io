@@ -9,4 +9,4 @@ category: blog
 
 
 
-[Joshua]:    http://joshuastray.github.io  "Joshua"
+[loo128]:    http://loo128.github.io  "loo128"

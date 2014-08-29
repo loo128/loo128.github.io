@@ -1,0 +1,14 @@
+auto: true
+
+markdown: rdiscount
+pygments: true
+paginate: 8
+permalink: /:title
+
+title: Joshua's blog
+url: http://joshuastray.github.io
+feed: /atom.xml
+author_info: <a href="http://joshuastray.github.io/">Joshua</a>
+
+host: 127.0.0.1
+port: 4001

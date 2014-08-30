@@ -1,7 +1,7 @@
 ---
 layout: post
-title: 关于魅族适配2
-description: 顶栏与底栏同时存在及改变
+title: 关于魅族Smartbar的适配2
+description: 顶栏与底栏同时存在及自定义底栏背景
 category: blog
 ---
 

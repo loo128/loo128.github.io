@@ -1,31 +1,64 @@
 ---
 layout: post
-title: 关于魅族Smartbar的适配2
+title: 关于魅族SmartBar的适配2
 description: 顶栏与底栏同时存在及自定义底栏背景
 category: blog
 ---
 
-1. 最大的弱点就是不敢承认弱点，诚实的面对自己的错误。
-2. 看到破窗户就去修好它，不然项目中的其他人会以为只要写出一样水平的破窗户就好。
-3. 率先做出改变，自己拿出石头煮汤，别人可能就会拿出更好的食材。
-4. 质量也应该是需求的一部分，在适当的时候收手，没有完美的软件。
-5. 持续学习，每年学习一门新语言，每个月读一本技术书籍。
-6. 学会与人交流，知道自己想说什么，知道别人想听什么，会选择合适的时机，倾听他人的话，一定要回复别人的提问/邮件。
-7. DRY
-8. 正交的设计
-9. 可撤销
-10. 曳光弹：最终系统的一个最简单的基本的结构，逐渐完善它成为最终的系统。
-11. 原型：会被最终丢弃，可使用更方便的语言实现。
-12. 必要时实现小型语言完成特定领域的工作。
-13. 正确的估算
-14. 拥有优秀设计的格式化文本比创建它的软件生命力更强。
-15. 学会使用shell，对自动化工作意义重大，并且比gui更高效。
-16. 学会一种真正的编辑器（vi，emacs，sublime），掌握它的全部功能，学会它的扩展开发使用的语言，使用这个编辑器进行所有工作。
-17. 使用版本控制工具，对所有工作。
-18. 
+##顶栏与底栏同时存在
+我们在做适配的过程中，未免会遇到这样的一个需求，需要Actionbar和Smartbar底栏同时存在，那我们改怎么处理呢？其实很简单，分为两步
 
+#######1、自定义ActionBar布局
 
+    mCustomView = LayoutInflater.from(this).inflate(R.layout.activity_main_actionbar, null);
+	actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+	actionBar.setCustomView(mCustomView);
 
+#######2、拆分ActionBar
+只需在AndroidManifest的<activity>或者<application>加上uiOptions="splitActionBarWhenNarrow"，例如：
 
+    <activity
+	    android:name=".ActionBarSplit"
+	    android:label="@string/action_bar_split"
+	    android:uiOptions="splitActionBarWhenNarrow" >
+    </activity>
+
+##自定义底栏背景
+大家第一想到的肯定是改变Actionbar样式不就好了，就像这样：
+
+     <style name="CustomActionBar" parent="@android:style/Widget.DeviceDefault.Light.ActionBar">
+        <item name="android:background">@drawable/action_bar_bg</item>
+        <item name="android:backgroundSplit">@drawable/action_bar_bg</item>
+     </style>
+答案是否定的，因为这样做的话，你的顶部栏和底部栏都会变成你上面background的样式了，如果我们想要不改变顶部栏的颜色同时，还想要自定义底部栏，我们该怎么办呐？郁闷，找了好久，才发现Actionbar的底部栏的默认背景颜色是通过android:windowBackground属性来配置的，所以我们只需要给需要改变底栏背景的Acticity配置这个属性样式即可：
+
+###### App Base Theme
+
+    <style name="AppTheme" parent="android:Theme.Holo.Light">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:homeAsUpIndicator">@drawable/ic_action_back</item>
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+        <item name="android:windowAnimationStyle">@style/HoloThemeActivityAnimation</item>
+        <item name="android:actionOverflowButtonStyle">@style/ActionbarOverFlowStyle</item>
+        <item name="android:actionMenuTextAppearance">@style/ActionBar.TitleText</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+######适配smartbar黑色背景主题
+
+    <style name="CustomTheme" parent="@style/AppTheme">
+        <item name="android:windowBackground">@color/black</item>
+    </style>
+
+######Activity样式
+     <activity
+            android:name=".ui.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomTheme"
+            android:uiOptions="splitActionBarWhenNarrow" />
+     <activity
 
 [loo28]:    http://loo128.github.io  "loo128"

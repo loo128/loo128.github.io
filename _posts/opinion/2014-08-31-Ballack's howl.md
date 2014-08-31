@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 你们还记得巴拉克的怒吼吗？
+title: 你还记得巴拉克的怒吼吗？
 category: opinion
 description: 
 ---

@@ -4,7 +4,7 @@ title: 你们还记得巴拉克的怒吼吗？
 category: opinion
 description: 
 ---
-![ballack](http://loo128.github.io/images/ballack.png)
+![ballack](http://loo128.github.io/images/ballack.jpg)
 
 
 

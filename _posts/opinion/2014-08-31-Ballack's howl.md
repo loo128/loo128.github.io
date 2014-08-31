@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 常用和弦指法
+title: 你们还记得巴拉克的怒吼吗？
 category: opinion
 description: 
 ---
@@ -13,4 +13,4 @@ description:
 ![](http://www.52jt.net/admin/etier_52jt/UploadFile/20134251528431.jpg)
 ![](http://www.52jt.net/admin/etier_52jt/UploadFile/201342515258559.jpg)
 ![](http://www.52jt.net/admin/etier_52jt/UploadFile/201342515313385.jpg)
-[loo128]:    http://loo128.github.io  "loo128"
+
